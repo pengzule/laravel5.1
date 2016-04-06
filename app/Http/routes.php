@@ -11,10 +11,8 @@
 |
 */
 
-Route::get('/home', function () {
-    return view('welcome');
-});
 
+Route::get('/home', 'HomeController@index');
 // 认证路由...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');

@@ -21,16 +21,11 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">Learn Laravel 5</a>
+				<a class="navbar-brand" href="/home">Learn Laravel 5</a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
-					<li><a href="/admin">后台首页</a></li>
-				</ul>
-				<ul class="nav navbar-nav">
-					<li><a href="/admin/comments">管理评论</a></li>
-				</ul>
+				
 
 				<ul class="nav navbar-nav navbar-right">
 					@if (Auth::guest())
@@ -38,6 +33,7 @@
 						<li><a href="/auth/register">Register</a></li>
 
 					@else
+					 
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
@@ -46,6 +42,14 @@
 						</li>
 					@endif
 				</ul>
+				@if (Auth::user()->is_admin)
+				<ul class="nav navbar-nav">
+					<li><a href="/admin">后台首页</a></li>
+				</ul>
+				<ul class="nav navbar-nav">
+					<li><a href="/admin/comments">管理评论</a></li>
+				</ul>
+				@endif
 			</div>
 		</div>
 	</nav>

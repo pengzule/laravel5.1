@@ -1,15 +1,36 @@
 @extends('app')
 
 @section('content')
+@if (!Auth::user()->is_admin )
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="panel panel-default">
+        <div class="panel-heading">权限不足</div>
+
+        <div class="panel-body">
+	  <div class="alert alert-danger">
+		<strong>Whoops!</strong> There were some problems with your input.<br><br>
+							
+	  </div>
+       
+	
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+@else
 
 <div class="container">
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <div class="panel panel-default">
         <div class="panel-heading">后台首页</div>
-
+	
         <div class="panel-body">
-
+	  
         <a href="{{ URL('admin/pages/create') }}" class="btn btn-lg btn-primary">新增</a>
 	
         @foreach ($pages as $page)
@@ -58,4 +79,5 @@
     </div>
   </div>
 </div>
+@endif
 @endsection

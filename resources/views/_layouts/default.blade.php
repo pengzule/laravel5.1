@@ -21,7 +21,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">Learn Laravel 5</a>
+				<a class="navbar-brand" href="/admin">Learn Laravel 5</a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -50,6 +50,9 @@
 	</nav>
   <div class="container" style="margin-top: 20px;">
     @yield('content')
+	<!-- Scripts -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <div id="footer" style="text-align: center; border-top: dashed 3px #eeeeee; margin: 50px 0; padding: 20px;">
       ©2015 <a href="https://lvwenhan.com">JohnLui</a>
     </div>
