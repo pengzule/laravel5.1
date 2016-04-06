@@ -22,3 +22,12 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 // 注册路由...
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
+
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin','middleware' => 'auth'], function()
+{
+  Route::get('/', 'AdminHomeController@index');
+  
+});
+
+Route::get('password/email', 'Auth\PasswordController@getEmail');
+Route::post('password/email', 'Auth\PasswordController@postEmail');
