@@ -1,4 +1,5 @@
 <?php $__env->startSection('content'); ?>
+
 <div class="container">
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
@@ -8,8 +9,28 @@
         <div class="panel-body">
 
         <a href="<?php echo e(URL('admin/pages/create')); ?>" class="btn btn-lg btn-primary">新增</a>
+	
+        <?php foreach($pages as $page): ?>
+        <?php if(Auth::user()->is_admin == 1): ?>
+ 	<hr>
+            <div class="page">
+              <h4><?php echo e($page->title); ?></h4>
+              <div class="content">
+                <p>
+                  <?php echo e($page->body); ?>
 
-          <?php foreach($pages as $page): ?>
+                </p>
+              </div>
+            </div>
+            <a href="<?php echo e(URL('admin/pages/'.$page->id.'/edit')); ?>" class="btn btn-success">编辑</a>
+
+            <form action="<?php echo e(URL('admin/pages/'.$page->id)); ?>" method="POST" style="display: inline;">
+              <input name="_method" type="hidden" value="DELETE">
+              <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
+              <button type="submit" class="btn btn-danger">删除</button>
+            </form>
+	<?php else: ?>
+	<?php if (Gate::check('update-page',$page)): ?>
             <hr>
             <div class="page">
               <h4><?php echo e($page->title); ?></h4>
@@ -27,7 +48,10 @@
               <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
               <button type="submit" class="btn btn-danger">删除</button>
             </form>
+	<?php endif; ?>
+	<?php endif; ?>
           <?php endforeach; ?>
+	
 
         </div>
       </div>

@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\User;
+use App\Page;
+
 use Illuminate\Contracts\Auth\Access\Gate as GateContract;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
@@ -26,6 +29,9 @@ class AuthServiceProvider extends ServiceProvider
     {
         parent::registerPolicies($gate);
 
-        //
+        $gate->define('update-page', function ($user, $page) {
+            return $user->id === $page->user_id;
+        });
+	
     }
 }
