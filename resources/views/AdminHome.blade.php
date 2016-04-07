@@ -13,7 +13,7 @@
 		<strong>Whoops!</strong> There were some problems with your input.<br><br>
 							
 	  </div>
-       
+        <a href="{{ URL('admin/pages/create') }}" class="btn btn-lg btn-primary">新增</a>
 	
 
         </div>

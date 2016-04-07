@@ -27,6 +27,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin','middleware' => 'auth'
   Route::get('/', 'AdminHomeController@index');
   Route::resource('pages', 'PagesController');
 });
+Route::get('pages/{id}', 'PagesController@show');
 
 Route::get('password/email', 'Auth\PasswordController@getEmail');
 Route::post('password/email', 'Auth\PasswordController@postEmail');
