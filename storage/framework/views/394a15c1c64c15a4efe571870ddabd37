@@ -49,6 +49,9 @@
 				<ul class="nav navbar-nav">
 					<li><a href="/admin/comments">管理评论</a></li>
 				</ul>
+				<ul class="nav navbar-nav">
+					<li><a href="/admin/manages">权限管理</a></li>
+				</ul>
 				<?php endif; ?>
 			</div>
 		</div>
