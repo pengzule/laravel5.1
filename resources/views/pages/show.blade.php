@@ -2,7 +2,7 @@
 
 @section('content')
   <h4>
-    <a href="/">⬅️返回首页</a>
+    <a href="/home">⬅️返回首页</a>
   </h4>
 
   <h1 style="text-align: center; margin-top: 50px;">{{ $page->title }}</h1>
@@ -32,6 +32,7 @@
       <form action="{{ URL('comment/store') }}" method="POST">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <input type="hidden" name="page_id" value="{{ $page->id }}">
+	<input type="hidden" name="user"    value="{{ Auth::user()->email }}">
         <div class="form-group">
           <label>Nickname</label>
           <input type="text" name="nickname" class="form-control" style="width: 300px;" required="required">

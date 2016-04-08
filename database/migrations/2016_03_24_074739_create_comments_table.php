@@ -19,6 +19,8 @@ class CreateCommentsTable extends Migration {
 			$table->string('email')->nullable();
 			$table->string('website')->nullable();
 			$table->text('content')->nullable();
+			$table->string('user');
+			$table->boolean('is_active')->default(0); 
 			$table->integer('page_id');
 			$table->timestamps();
 		});

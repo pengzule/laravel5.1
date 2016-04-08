@@ -20,9 +20,9 @@
 						<input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">E-Mail Address</label>
+							<label class="col-md-4 control-label">Name</label>
 							<div class="col-md-6">
-								<input type="email" class="form-control" name="email" value="<?php echo e(old('email')); ?>">
+								<input type="text" class="form-control" name="name" value="<?php echo e(old('name')); ?>">
 							</div>
 						</div>
 

@@ -24,6 +24,7 @@
             <input name="_method" type="hidden" value="PUT">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <input type="hidden" name="page_id" value="{{ $comment->page_id }}">
+	    <input type="hidden" name="is_active" value="{{ 1 }}">
             Nickname: <input type="text" name="nickname" class="form-control" required="required" value="{{ $comment->nickname }}">
             <br>
             Email:

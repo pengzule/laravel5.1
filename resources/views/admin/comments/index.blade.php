@@ -8,27 +8,25 @@
         <div class="panel-heading">管理评论</div>
 
         <div class="panel-body">
-
+        
         <table class="table table-striped">
           <tr class="row">
-            <th class="col-lg-4">User</th>
+            <th class="col-lg-2">User</th>
             <th class="col-lg-4">Address</th>
 	    <th class="col-lg-4">Content</th>
-            <th class="col-lg-4">Page</th>
+            <th class="col-lg-2">Page</th>
             <th class="col-lg-1">编辑</th>
+            <th class="col-lg-1">确认</th>
             <th class="col-lg-1">删除</th>
-            <th class="col-lg-1">删除</th>
-          </tr>
-          @foreach ($comments as $comment)
-            <tr class="row">
+          </tr> 
+          @forelse ($comments as $comment)
+	   
+           
+	     <tr class="row">
               <td class="col-lg-2">
-                 @if ($comment->website)
-                  <a href="{{ $comment->website }}">
-                    <h4>{{ $comment->nickname }}</h4>
-                  </a>
-                @else
-                  <h3>{{ $comment->nickname }}</h3>
-                @endif
+   
+                {{ $comment->nickname }}
+               <br>
                 {{ $comment->email }}
               </td>
 	      <td class="col-lg-4" >
@@ -47,9 +45,10 @@
               </td>
               <td class="col-lg-1">
                 <form action="{{ URL('admin/comments/'.$comment->id) }}" method="POST" style="display: inline;">
-                  <input name="_method" type="hidden" value="DELETE">
+                  <input name="_method" type="hidden" value="PUT">
                   <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                  <button type="submit" class="btn btn-danger">删除</button>
+		  <input type="hidden" name="is_active" value="{{ 1 }}">
+                  <button type="submit" class="btn  btn-info">确认</button>
                 </form>
               </td>
               <td class="col-lg-1">
@@ -60,10 +59,20 @@
                 </form>
               </td>
             </tr>
-          @endforeach
+        
+	 
+         
+	  @empty
+	
+	  <div class="alert alert-danger">
+		<strong>Whoops!</strong> There is no order.<br><br>
+							
+	  </div>
+          
+          @endforelse
+         
         </table>
-
-
+	
         </div>
       </div>
     </div>
