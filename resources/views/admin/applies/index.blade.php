@@ -5,7 +5,7 @@
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <div class="panel panel-default">
-        <div class="panel-heading">管理评论</div>
+        <div class="panel-heading">manage apply</div>
 
         <div class="panel-body">
         
@@ -19,32 +19,32 @@
             <th class="col-lg-1">确认</th>
             <th class="col-lg-1">删除</th>
           </tr> 
-          @forelse ($comments as $comment)
+          @forelse ($applies as $apply)
 	   
-           @can ('update-comment',$comment)
+          
 	     <tr class="row">
               <td class="col-lg-2">
    
-                {{ $comment->nickname }}
+                {{ $apply->id }}
                <br>
-                {{ $comment->email }}
+                {{ $apply->title }}
               </td>
 	      <td class="col-lg-4" >
-                {{ $comment->website }}
+                {{ $apply->slug }}
               </td>
               <td class="col-lg-4">
-                {{ $comment->content }}
+                {{ $apply->body }}
               </td>
               <td class="col-lg-4">
-                <a href="{{ URL('pages/'.$comment->page_id) }}" target="_blank">
-                  {{ App\Page::find($comment->page_id)->title }}
-                </a>
+                
+                  {{ $apply->user_id }}
+                
               </td>
               <td class="col-lg-1">
-                <a href="{{ URL('admin/comments/'.$comment->id.'/edit') }}" class="btn btn-success">编辑</a>
+                <a href="{{ URL('admin/applies/'.$apply->id.'/edit') }}" class="btn btn-success">编辑</a>
               </td>
               <td class="col-lg-1">
-                <form action="{{ URL('admin/comments/'.$comment->id) }}" method="POST" style="display: inline;">
+                <form action="{{ URL('admin/applies/'.$apply->id) }}" method="POST" style="display: inline;">
                   <input name="_method" type="hidden" value="PUT">
                   <input type="hidden" name="_token" value="{{ csrf_token() }}">
 		  <input type="hidden" name="is_active" value="{{ 1 }}">
@@ -52,7 +52,7 @@
                 </form>
               </td>
               <td class="col-lg-1">
-                <form action="{{ URL('admin/comments/'.$comment->id) }}" method="POST" style="display: inline;">
+                <form action="{{ URL('admin/applies/'.$apply->id) }}" method="POST" style="display: inline;">
                   <input name="_method" type="hidden" value="DELETE">
                   <input type="hidden" name="_token" value="{{ csrf_token() }}">
                   <button type="submit" class="btn btn-danger">删除</button>
@@ -61,7 +61,7 @@
             </tr>
         
 	 
-         @endcan
+         
 	  @empty
 	
 	  <div class="alert alert-danger">

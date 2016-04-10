@@ -11,8 +11,15 @@
 |
 */
 
+Route::get('/', function(){
 
+return view('welcome');
+
+});
 Route::get('/home', 'HomeController@index');
+Route::get('order', 'OrdersController@index');
+Route::get('apply', 'ApplysshowController@index');
+Route::post('apply/store', 'ApplysController@store');
 // 认证路由...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
@@ -27,6 +34,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin','middleware' => 'auth'
   Route::get('/', 'AdminHomeController@index');
   Route::resource('pages', 'PagesController');
   Route::resource('comments', 'CommentsController');
+  Route::resource('applies', 'AppliesController');
 });
 Route::get('pages/{id}', 'PagesController@show');
 Route::post('comment/store', 'CommentsController@store');

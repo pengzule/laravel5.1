@@ -19,7 +19,7 @@
           </tr> 
           <?php $__empty_1 = true; foreach($comments as $comment): $__empty_1 = false; ?>
 	   
-           
+           <?php if (Gate::check('update-comment',$comment)): ?>
 	     <tr class="row">
               <td class="col-lg-2">
    
@@ -64,7 +64,7 @@
             </tr>
         
 	 
-         
+         <?php endif; ?>
 	  <?php endforeach; if ($__empty_1): ?>
 	
 	  <div class="alert alert-danger">

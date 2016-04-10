@@ -32,6 +32,10 @@ class AuthServiceProvider extends ServiceProvider
         $gate->define('update-page', function ($user, $page) {
             return $user->id === $page->user_id;
         });
+	$gate->define('update-comment', function ($user, $comment) {
+	   
+            return ($user->email === $comment->user)&&(0 === $comment->is_active);
+        });
 	
     }
 }

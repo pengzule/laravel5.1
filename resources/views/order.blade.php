@@ -1,4 +1,4 @@
-@extends('app')
+@extends('_layouts.default')
 
 @section('content')
 <div class="container">
@@ -10,6 +10,8 @@
         <div class="panel-body">
         
         <table class="table table-striped">
+	@foreach ($comments as $comment)
+	@can ('update-comment',$comment)
           <tr class="row">
             <th class="col-lg-2">User</th>
             <th class="col-lg-4">Address</th>
@@ -19,9 +21,9 @@
             <th class="col-lg-1">确认</th>
             <th class="col-lg-1">删除</th>
           </tr> 
-          @forelse ($comments as $comment)
+          
 	   
-           @can ('update-comment',$comment)
+           
 	     <tr class="row">
               <td class="col-lg-2">
    
@@ -61,15 +63,10 @@
             </tr>
         
 	 
-         @endcan
-	  @empty
-	
-	  <div class="alert alert-danger">
-		<strong>Whoops!</strong> There is no order.<br><br>
-							
-	  </div>
           
-          @endforelse
+	  
+          @endcan
+          @endforeach
          
         </table>
 	

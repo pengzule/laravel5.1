@@ -1,6 +1,5 @@
 @extends('_layouts.default')
 
-
 @section('content')
   <h4>
     <a href="/home">⬅️返回首页</a>

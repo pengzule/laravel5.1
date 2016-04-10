@@ -1,49 +1,9 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Laravel</title>
-
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-
-        <style>
-            html, body {
-                height: 100%;
-            }
-
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
-
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-		.quote {
-				font-size: 24px;
-			}
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Laravel 5</div>
-		<div class="quote">{{ Inspiring::quote() }}</div>
-            </div>
+@extends('_layouts.default')
+@section('content')
+	<div id="content">
+        <div id="title" style="text-align: center;">
+		<h1>Learn Laravel 5</h1>
+		<div style="padding: 5px; font-size: 16px;">{{ Inspiring::quote() }}</div>
+	</div>
         </div>
-    </body>
-</html>
+@endsection
