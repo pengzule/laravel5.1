@@ -32,7 +32,9 @@
       <form action="<?php echo e(URL('comment/store')); ?>" method="POST">
         <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
         <input type="hidden" name="page_id" value="<?php echo e($page->id); ?>">
+        <?php if(!Auth::guest()): ?>
 	<input type="hidden" name="user"    value="<?php echo e(Auth::user()->email); ?>">
+        <?php endif; ?>
         <div class="form-group">
           <label>Nickname</label>
           <input type="text" name="nickname" class="form-control" style="width: 300px;" required="required">

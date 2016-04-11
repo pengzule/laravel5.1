@@ -33,7 +33,9 @@
       <form action="{{ URL('comment/store') }}" method="POST">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <input type="hidden" name="page_id" value="{{ $page->id }}">
+        @if (!Auth::guest())
 	<input type="hidden" name="user"    value="{{ Auth::user()->email }}">
+        @endif
         <div class="form-group">
           <label>Nickname</label>
           <input type="text" name="nickname" class="form-control" style="width: 300px;" required="required">
