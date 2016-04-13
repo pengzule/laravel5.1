@@ -7,9 +7,11 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'CreateAppliesTable' => $baseDir . '/database/migrations/2016_04_10_160026_create_applies_table.php',
+    'CreateCartsTable' => $baseDir . '/database/migrations/2016_04_13_171415_create_carts_table.php',
     'CreateCommentsTable' => $baseDir . '/database/migrations/2016_03_24_074739_create_comments_table.php',
     'CreatePagesTable' => $baseDir . '/database/migrations/2016_04_05_092240_create_pages_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+    'CreateProductsTable' => $baseDir . '/database/migrations/2016_04_13_170449_create_products_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
@@ -480,6 +482,7 @@ return array(
     'PHP_Token_YIELD' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_YIELD_FROM' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PageTableSeeder' => $baseDir . '/database/seeds/PageTableSeeder.php',
+    'ProductTableSeeder' => $baseDir . '/database/seeds/ProductTableSeeder.php',
     'SebastianBergmann\\Comparator\\ArrayComparator' => $vendorDir . '/sebastian/comparator/src/ArrayComparator.php',
     'SebastianBergmann\\Comparator\\Comparator' => $vendorDir . '/sebastian/comparator/src/Comparator.php',
     'SebastianBergmann\\Comparator\\ComparisonFailure' => $vendorDir . '/sebastian/comparator/src/ComparisonFailure.php',
