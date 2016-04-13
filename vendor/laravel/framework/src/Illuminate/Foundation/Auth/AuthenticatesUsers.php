@@ -2,7 +2,6 @@
 
 namespace Illuminate\Foundation\Auth;
 
-use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Lang;
@@ -82,16 +81,8 @@ trait AuthenticatesUsers
         if (method_exists($this, 'authenticated')) {
             return $this->authenticated($request, Auth::user());
         }
-	//if (!Auth::user()->is_admin){
-        //	return redirect()->intended('/home');
-	//}else{
-	//	return redirect()->intended('/admin');
-	//}
-        if (Auth::user()->is_admin)
-        //return redirect()->intended($this->redirectPath());
-	//return redirect()->intended('/home');
-	return redirect('/admin');
-	return redirect('/home');
+
+        return redirect()->intended($this->redirectPath());
     }
 
     /**
@@ -126,7 +117,7 @@ trait AuthenticatesUsers
     {
         Auth::logout();
 
-        return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/admin');
+        return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/');
     }
 
     /**

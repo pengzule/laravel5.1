@@ -11,7 +11,7 @@ use Redirect, Input;
 
 use App\Apply;
 
-class ApplysController extends Controller
+class AppliesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,7 +20,7 @@ class ApplysController extends Controller
      */
     public function index()
     {
-        //
+       return view('applys.show');
     }
 
     /**

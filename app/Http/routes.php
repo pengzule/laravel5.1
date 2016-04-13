@@ -11,15 +11,11 @@
 |
 */
 
-Route::get('/', function(){
-
-return view('welcome');
-
-});
+Route::get('/', 'home\HomeController@index');
 Route::get('/home', 'HomeController@index');
 Route::get('order', 'OrdersController@index');
-Route::get('apply', 'ApplysshowController@index');
-Route::post('apply/store', 'ApplysController@store');
+Route::get('apply', 'AppliesController@index');
+Route::post('apply/store', 'AppliesController@store');
 // 认证路由...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');

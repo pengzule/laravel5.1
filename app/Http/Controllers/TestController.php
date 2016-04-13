@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Apply;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Overtrue\LaravelShoppingCart\Cart;
 
-class ApplysshowController extends Controller
+class TestController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +17,8 @@ class ApplysshowController extends Controller
      */
     public function index()
     {
-        return view('applys.show');
+      
+      return view('welcome');
     }
 
     /**

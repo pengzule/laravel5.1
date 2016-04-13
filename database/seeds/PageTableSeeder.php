@@ -7,7 +7,7 @@ class PageTableSeeder extends Seeder {
 
   public function run()
   {
-    DB::table('pages')->delete();
+    DB::table('pages')->truncate();
 
     for ($i=0; $i < 10; $i++) {
       Page::create([

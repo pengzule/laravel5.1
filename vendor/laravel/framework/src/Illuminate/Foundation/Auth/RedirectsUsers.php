@@ -1,8 +1,7 @@
 <?php
 
 namespace Illuminate\Foundation\Auth;
-use App\User;
-use Auth;
+
 trait RedirectsUsers
 {
     /**
@@ -15,9 +14,7 @@ trait RedirectsUsers
         if (property_exists($this, 'redirectPath')) {
             return $this->redirectPath;
         }
-       
-	 return property_exists($this, 'redirectTo') ? $this->redirectTo : '/auth/login';
-      
-	
+
+        return property_exists($this, 'redirectTo') ? $this->redirectTo : '/home';
     }
 }
