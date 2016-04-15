@@ -5278,3 +5278,58 @@ Stack trace:
 [2016-04-13 18:14:26] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected end of file, expecting function (T_FUNCTION)' in /usr/local/nginx/html/laravel5.1/app/Http/Controllers/HomeController.php:47
 Stack trace:
 #0 {main}  
+[2016-04-13 23:24:07] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'App\Http\Controllers\BaseController' not found' in /usr/local/nginx/html/laravel5.1/app/Http/Controllers/home/HomeController.php:5
+Stack trace:
+#0 {main}  
+[2016-04-13 23:26:09] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'Controller' not found' in /usr/local/nginx/html/laravel5.1/app/Http/Controllers/home/BaseController.php:3
+Stack trace:
+#0 {main}  
+[2016-04-13 23:26:51] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'Controller' not found' in /usr/local/nginx/html/laravel5.1/app/Http/Controllers/home/BaseController.php:3
+Stack trace:
+#0 {main}  
+[2016-04-13 23:29:18] local.ERROR: exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'laravel51.carts' doesn't exist' in /usr/local/nginx/html/laravel5.1/vendor/laravel/framework/src/Illuminate/Database/Connection.php:390
+Stack trace:
+#0 /usr/local/nginx/html/laravel5.1/vendor/laravel/framework/src/Illuminate/Database/Connection.php(390): PDOStatement->execute(Array)
+#1 /usr/local/nginx/html/laravel5.1/vendor/laravel/framework/src/Illuminate/Database/Connection.php(648): Illuminate\Database\Connection->Illuminate\Database\{closure}(Object(Illuminate\Database\MySqlConnection), 'truncate `carts...', Array)
+#2 /usr/local/nginx/html/laravel5.1/vendor/laravel/framework/src/Illuminate/Database/Connection.php(611): Illuminate\Database\Connection->runQueryCallback('truncate `carts...', Array, Object(Closure))
+#3 /usr/local/nginx/html/laravel5.1/vendor/laravel/framework/src/Illuminate/Database/Connection.php(391): Illuminate\Database\Connection->run('truncate `carts...', Array, Object(Closure))
+#4 /usr/local/nginx/html/laravel5.1/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(1901): Illuminate\Database\Connection->statement('truncate `carts...', Array)
+#5 /usr/local/nginx/html/laravel5.1/database/seeds/ProductTableSeeder.php(10): Illuminate\Database\Query\Builder->truncate()
+#6 /usr/local/nginx/html/laravel5.1/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(42): ProductTableSeeder->run()
+#7 /usr/local/nginx/html/laravel5.1/database/seeds/DatabaseSeeder.php(19): Illuminate\Database\Seeder->call('ProductTableSee...')
+#8 /usr/local/nginx/html/laravel5.1/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(61): DatabaseSeeder->run()
+#9 [internal function]: Illuminate\Database\Console\Seeds\SeedCommand->fire()
+#10 /usr/local/nginx/html/laravel5.1/vendor/laravel/framework/src/Illuminate/Container/Container.php(507): call_user_func_array(Array, Array)
+#11 /usr/local/nginx/html/laravel5.1/vendor/laravel/framework/src/Illuminate/Console/Command.php(150): Illuminate\Container\Container->call(Array)
+#12 /usr/local/nginx/html/laravel5.1/vendor/symfony/console/Command/Command.php(256): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#13 /usr/local/nginx/html/laravel5.1/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#14 /usr/local/nginx/html/laravel5.1/vendor/symfony/console/Application.php(841): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#15 /usr/local/nginx/html/laravel5.1/vendor/symfony/console/Application.php(189): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Database\Console\Seeds\SeedCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#16 /usr/local/nginx/html/laravel5.1/vendor/symfony/console/Application.php(120): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#17 /usr/local/nginx/html/laravel5.1/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(107): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#18 /usr/local/nginx/html/laravel5.1/artisan(36): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#19 {main}
+
+Next exception 'Illuminate\Database\QueryException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'laravel51.carts' doesn't exist (SQL: truncate `carts`)' in /usr/local/nginx/html/laravel5.1/vendor/laravel/framework/src/Illuminate/Database/Connection.php:655
+Stack trace:
+#0 /usr/local/nginx/html/laravel5.1/vendor/laravel/framework/src/Illuminate/Database/Connection.php(611): Illuminate\Database\Connection->runQueryCallback('truncate `carts...', Array, Object(Closure))
+#1 /usr/local/nginx/html/laravel5.1/vendor/laravel/framework/src/Illuminate/Database/Connection.php(391): Illuminate\Database\Connection->run('truncate `carts...', Array, Object(Closure))
+#2 /usr/local/nginx/html/laravel5.1/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(1901): Illuminate\Database\Connection->statement('truncate `carts...', Array)
+#3 /usr/local/nginx/html/laravel5.1/database/seeds/ProductTableSeeder.php(10): Illuminate\Database\Query\Builder->truncate()
+#4 /usr/local/nginx/html/laravel5.1/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(42): ProductTableSeeder->run()
+#5 /usr/local/nginx/html/laravel5.1/database/seeds/DatabaseSeeder.php(19): Illuminate\Database\Seeder->call('ProductTableSee...')
+#6 /usr/local/nginx/html/laravel5.1/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(61): DatabaseSeeder->run()
+#7 [internal function]: Illuminate\Database\Console\Seeds\SeedCommand->fire()
+#8 /usr/local/nginx/html/laravel5.1/vendor/laravel/framework/src/Illuminate/Container/Container.php(507): call_user_func_array(Array, Array)
+#9 /usr/local/nginx/html/laravel5.1/vendor/laravel/framework/src/Illuminate/Console/Command.php(150): Illuminate\Container\Container->call(Array)
+#10 /usr/local/nginx/html/laravel5.1/vendor/symfony/console/Command/Command.php(256): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#11 /usr/local/nginx/html/laravel5.1/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#12 /usr/local/nginx/html/laravel5.1/vendor/symfony/console/Application.php(841): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#13 /usr/local/nginx/html/laravel5.1/vendor/symfony/console/Application.php(189): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Database\Console\Seeds\SeedCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#14 /usr/local/nginx/html/laravel5.1/vendor/symfony/console/Application.php(120): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#15 /usr/local/nginx/html/laravel5.1/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(107): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#16 /usr/local/nginx/html/laravel5.1/artisan(36): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#17 {main}  
+[2016-04-14 20:00:17] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'Controller' not found' in /usr/local/nginx/html/laravel5.1/app/Http/Controllers/home/BaseController.php:3
+Stack trace:
+#0 {main}  
