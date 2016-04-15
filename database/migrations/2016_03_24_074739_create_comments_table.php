@@ -21,7 +21,8 @@ class CreateCommentsTable extends Migration {
 			$table->text('content')->nullable();
 			$table->string('user');
 			$table->boolean('is_active')->default(0); 
-			$table->integer('page_id');
+			$table->integer('page_id')->unsigned()->index();
+			$table->foreign('page_id')->references('id')->on('pages')->onDelete('cascade');
 			$table->timestamps();
 		});
 	}

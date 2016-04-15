@@ -13,7 +13,8 @@ class CommentsController extends Controller {
 
 	public function store()
 	{
-		if (Comment::create(Input::all())) {
+		$comments = Input::all(); //Request::all();
+		if (Comment::create($comments)) {
 			return Redirect::back();
 		} else {
 			return Redirect::back()->withInput()->withErrors('评论发表失败！');

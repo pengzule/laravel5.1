@@ -16,6 +16,7 @@ trait RegistersUsers
      */
     public function getRegister()
     {
+    	echo "RegistersUsers.php.getRegister()";
         return view('auth.register');
     }
 
@@ -27,6 +28,8 @@ trait RegistersUsers
      */
     public function postRegister(Request $request)
     {
+    	echo $request->all();
+    	
         $validator = $this->validator($request->all());
 
         if ($validator->fails()) {
@@ -35,8 +38,13 @@ trait RegistersUsers
             );
         }
 
-        Auth::login($this->create($request->all()));
+        $this->create($request->all());
 
+		echo "redirectPath"+$this->redirectPath();
+		echo "redirect"+ redirect($this->redirectPath());
+     
+
+     	
         return redirect($this->redirectPath());
     }
 }

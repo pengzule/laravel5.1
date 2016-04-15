@@ -11,7 +11,12 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
+
+//Route::get('/', 'HomeController@index');
+
+//Route::get('/', 'home\HomeController@index');
+Route::get('/','TestController@toProduct');
+
 Route::get('/home', 'HomeController@index');
 Route::get('order', 'OrdersController@index');
 Route::get('apply', 'AppliesController@index');

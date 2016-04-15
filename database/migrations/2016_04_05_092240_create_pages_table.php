@@ -18,6 +18,7 @@ class CreatePagesTable extends Migration
 		$table->string('slug')->nullable();
 		$table->text('body')->nullable();
 		$table->integer('user_id');
+		$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 		$table->timestamps();
         });
     }
