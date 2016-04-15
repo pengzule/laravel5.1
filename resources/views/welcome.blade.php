@@ -1,37 +1,25 @@
-@extends('_layouts.default')
+ @extends('_layouts.default')
 @section('content')
 	<div id="content">
-        <div id="title" style="text-align: center;">
-		<h1>Learn Laravel 5</h1>
-		<div style="padding: 5px; font-size: 16px;">{{ Inspiring::quote() }}</div>
-		<table>
-  
-    <thead>
-        <tr>
-            <th>Product</th>
-            <th>Qty</th>
-            <th>Item Price</th>
-            <th>Subtotal</th>
-        </tr>
-    </thead>
+		<div class="showbox" >
 
-    <tbody>
+		</div>
 
-   
-
-        <tr>
-            <td>
-                <p><strong><?php echo $row->name;?></strong></p>
-                <p><?php echo ($row->options->has('size') ? $row->options->size : '');?></p>
-            </td>
-            <td><input type="text" value="<?php echo $row->qty;?>"></td>
-            <td>$<?php echo $row->price;?></td>
-            <td>$<?php echo $row->subtotal;?></td>
-       </tr>
-
-   
-    </tbody>
-</table>
-	</div>
         </div>
+	<div class="weui_cells weui_cells_access">
+		@foreach($products as $product)
+			<a class="weui_cell" href="#">
+				<div class="weui_cell_hd"><img class="bk_preview" src="/images/2.jpg"></div>
+				<div class="weui_cell_bd weui_cell_primary">
+					<div style="margin-bottom: 10px;">
+						<span class="bk_title">{{$product->name}}</span>
+						<span class="bk_price" style="float: right;">￥ {{$product->price}}</span>
+					</div>
+
+					<p class="bk_summary">{{$product->summary}}</p>
+				</div>
+				<div class="weui_cell_ft"></div>
+			</a>
+		@endforeach
+	</div>
 @endsection

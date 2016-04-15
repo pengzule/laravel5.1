@@ -13,7 +13,9 @@ class AppliesController extends Controller {
 
 	public function index()
 	{
-		return view('admin.applies.index')->withApplies(Apply::all());
+		$applies = Apply::latest()->IsActive()->get();
+		return view('admin.applies.index',compact('applies'));
+		//return view('admin.applies.index')->withApplies(Apply::all());
 	}
 
 	public function edit($id)

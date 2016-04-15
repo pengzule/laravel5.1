@@ -8,7 +8,7 @@ class PageTableSeeder extends Seeder {
   public function run()
   {
     DB::table('pages')->truncate();
-
+    DB::table('comments')->truncate();
     for ($i=0; $i < 10; $i++) {
       Page::create([
         'title'   => 'Title '.$i,

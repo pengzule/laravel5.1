@@ -2,8 +2,21 @@
 
 @section('content')
 	<div id="title" style="text-align: center;">
-		<h1>Learn Laravel 5</h1>
-		<div style="padding: 5px; font-size: 16px;">{{ Inspiring::quote() }}</div>
+		<div class="showbox">
+			<div class="imagebox">
+				<img src="http://www.itxueyuan.org/uploads/javascript/demo/lunbo/zuoyou_title/images/1.jpg" alt="1.jpg">
+				<img src="http://www.itxueyuan.org/uploads/javascript/demo/lunbo/zuoyou_title/images/2.jpg" alt="2.jpg">
+				<img src="http://www.itxueyuan.org/uploads/javascript/demo/lunbo/zuoyou_title/images/3.jpg" alt="3.jpg">
+				<img src="http://www.itxueyuan.org/uploads/javascript/demo/lunbo/zuoyou_title/images/4.jpg" alt="4.jpg">
+			</div>
+			<div class="icobox">
+				<span rel="0" class="active">0</span>
+				<span rel="1">1</span>
+				<span rel="2">2</span>
+				<span rel="3">3</span>
+			</div>
+		</div>
+
 	</div>
 	<hr>
 	<div id="content">
@@ -22,4 +35,6 @@
 			@endforeach
 		</ul>
 	</div>
+
+
 @endsection

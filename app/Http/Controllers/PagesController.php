@@ -6,7 +6,7 @@ class PagesController extends Controller {
 
   public function show($id)
   {
-	$page = Page::find($id);
+       $page = Page::find($id);
        if(is_null($page)){
            abort(404);
        }    

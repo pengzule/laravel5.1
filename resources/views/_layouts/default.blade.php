@@ -7,8 +7,11 @@
   <title>Learn Laravel 5</title>
 
   <link href="/css/app.css" rel="stylesheet">
-
+	<link href="/css/lbt.css" rel="stylesheet">
+	<link href="/css/book.css" rel="stylesheet">
+	<link href="/css/weui.css" rel="stylesheet">
   <!-- Fonts -->
+	<link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
   <link href='http://fonts.useso.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 </head>
 <body>
@@ -54,6 +57,7 @@
 	<!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	  <script src="/js/lbt.js" ></script>
     <div id="footer" style="text-align: center; border-top: dashed 3px #eeeeee; margin: 50px 0; padding: 20px;">
       ©2015 <a href="https://lvwenhan.com">JohnLui</a>
     </div>

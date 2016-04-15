@@ -3,13 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Product;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Overtrue\LaravelShoppingCart\Cart;
+
 
 class TestController extends Controller
 {
+
+
+    public function toProduct()
+    {
+        $products = Product::all();
+        return view('welcome')->with('products', $products);
+    }
     /**
      * Display a listing of the resource.
      *
