@@ -1,4 +1,4 @@
-@extends('login')
+@extends('_layouts.default')
 
 @section('content')
 <div class="container-fluid">

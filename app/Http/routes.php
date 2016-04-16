@@ -16,8 +16,8 @@
 
 //Route::get('/', 'home\HomeController@index');
 Route::get('/','TestController@toProduct');
-
-Route::get('/home', 'HomeController@index');
+Route::get('/home', 'TestController@toProduct');
+//Route::get('/home', 'HomeController@index');
 Route::get('order', 'OrdersController@index');
 Route::get('apply', 'AppliesController@index');
 Route::post('apply/store', 'AppliesController@store');
@@ -37,7 +37,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin','middleware' => 'auth'
   Route::resource('comments', 'CommentsController');
   Route::resource('applies', 'AppliesController');
 });
-Route::get('pages/{id}', 'PagesController@show');
+Route::get('products/{id}', 'ProductsController@show');
 Route::post('comment/store', 'CommentsController@store');
 
 Route::get('password/email', 'Auth\PasswordController@getEmail');

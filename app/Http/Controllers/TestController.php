@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Http\Requests;
@@ -14,7 +15,7 @@ class TestController extends Controller
 
     public function toProduct()
     {
-        $products = Product::all();
+        $products = DB::table('products')->paginate(8);
         return view('cart.products')->with('products', $products);
     }
     /**

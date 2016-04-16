@@ -1,6 +1,4 @@
-@extends('_layouts.default')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 <div id="title" style="text-align: center;">
 
 		<div class="showbox">
@@ -23,26 +21,26 @@
 <hr>
 <div class="row">
 
-	@foreach ($products as $product)
+	<?php foreach($products as $product): ?>
 		
 	<div class="col-3 col-sm-3 col-lg-3">
 
 		<div class="thumbnail">
 
 			<div class="caption ">
-				<a href="{{ URL('products/'.$product->id) }}"><img  src="/images/2.jpg"></a>
+				<a href="<?php echo e(URL('products/'.$product->id)); ?>"><img  src="/images/2.jpg"></a>
 				<hr>
-				<a  style="color: black;"  href="{{ URL('products/'.$product->id) }}">	<p >金钱猫EOC终端猫MT706 广电猫 Modem EOC四口终端设备</p></a>
-				<p> ¥ {{ $product->price }}</p>
+				<a  style="color: black;"  href="<?php echo e(URL('products/'.$product->id)); ?>">	<p >金钱猫EOC终端猫MT706 广电猫 Modem EOC四口终端设备</p></a>
+				<p> ¥ <?php echo e($product->price); ?></p>
 				<p>
 					
 					
 					<a class="btn btn-info btn-sm btn-add" href="#">Add Cart</a>
 					
 
-					{{-- Add to wishlist button --}}
+					<?php /* Add to wishlist button */ ?>
 					<span class="pull-right">
-						{{-- Check if the product is on the wishlist already --}}
+						<?php /* Check if the product is on the wishlist already */ ?>
 						
 							<a class="btn btn-xs tip wishlist-add" href="#" title="Add to Wishlist"><i class="fa fa-star-o fa-lg"></i></a>
 						
@@ -55,10 +53,13 @@
 
 	</div>
 	
-	@endforeach
+	<?php endforeach; ?>
 
 </div>
 
-{!! $products->render() !!}
+<?php echo $products->render(); ?>
 
-@stop
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('_layouts.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

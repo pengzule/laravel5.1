@@ -22,7 +22,7 @@ class ProductTableSeeder extends Seeder {
 			$product = new Product;
 			$product->slug  = ucfirst($name);
 			$product->name  = ucfirst($name);
-			$product->price = $random->randomNumber(2);
+			$product->price = $random->randomNumber(3);
 			$product->save();
 		}
 	}
