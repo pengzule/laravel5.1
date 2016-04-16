@@ -1,11 +1,12 @@
 <?php $__env->startSection('content'); ?>
 <div id="title" style="text-align: center;">
+
 		<div class="showbox">
 			<div class="imagebox">
-				<img src="http://www.itxueyuan.org/uploads/javascript/demo/lunbo/zuoyou_title/images/1.jpg" alt="1.jpg">
-				<img src="http://www.itxueyuan.org/uploads/javascript/demo/lunbo/zuoyou_title/images/2.jpg" alt="2.jpg">
-				<img src="http://www.itxueyuan.org/uploads/javascript/demo/lunbo/zuoyou_title/images/3.jpg" alt="3.jpg">
-				<img src="http://www.itxueyuan.org/uploads/javascript/demo/lunbo/zuoyou_title/images/4.jpg" alt="4.jpg">
+				<a href="#"><img src="/images/3.jpg" alt="3.jpg"></a>
+				<a href="#11"><img src="/images/4.jpg" alt="4.jpg"></a>
+				<a href="#"><img src="/images/5.jpg" alt="5.jpg"></a>
+				<a href="#"><img src="/images/6.jpg" alt="6.jpg"></a>
 			</div>
 			<div class="icobox">
 				<span rel="0" class="active">0</span>
@@ -25,11 +26,11 @@
 	<div class="col-3 col-sm-3 col-lg-3">
 
 		<div class="thumbnail">
-		
-			<div class="caption">
-				<a href="#"><img  src="/images/1.jpg"></a>
+
+			<div class="caption ">
+				<a href="<?php echo e(URL('products/'.$product->id)); ?>"><img  src="/images/2.jpg"></a>
 				<hr>
-				<a  href="#">	<h2><?php echo e($product->name); ?></h2></a>
+				<a  style="color: black;"  href="<?php echo e(URL('products/'.$product->id)); ?>">	<p >金钱猫EOC终端猫MT706 广电猫 Modem EOC四口终端设备</p></a>
 				<p> ¥ <?php echo e($product->price); ?></p>
 				<p>
 					
@@ -56,6 +57,7 @@
 
 </div>
 
+<?php echo $products->render(); ?>
 
 
 <?php $__env->stopSection(); ?>

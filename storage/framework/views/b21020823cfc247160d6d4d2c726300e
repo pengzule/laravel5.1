@@ -1,6 +1,4 @@
-@extends('app')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
    <ul class="pzl_">
         <li><a class="pzl_a" href="#home">Home</a></li>
         <li><a class="pzl_a "href="#news">News</a></li>
@@ -15,52 +13,54 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
                     <div class="panel-heading"><a href="#"><img src="/images/user.png"></a>
-		    	<a href="#">( {{  Auth::user()->name}} )</a>
+		    	<a href="#">( <?php echo e(Auth::user()->name); ?> )</a>
                     </div>
 
                     <div class="panel-body">
 
-                        <a href="{{ URL('admin/pages/create') }}" class="btn btn-lg btn-primary">新增</a>
+                        <a href="<?php echo e(URL('admin/pages/create')); ?>" class="btn btn-lg btn-primary">新增</a>
 
-                        @foreach ($pages as $page)
-                            @if (Auth::user()->is_admin == 1)
+                        <?php foreach($pages as $page): ?>
+                            <?php if(Auth::user()->is_admin == 1): ?>
                                 <hr>
                                 <div class="page">
-                                    <h4>{{ $page->title }}</h4>
+                                    <h4><?php echo e($page->title); ?></h4>
                                     <div class="content">
                                         <p>
-                                            {{ $page->body }}
+                                            <?php echo e($page->body); ?>
+
                                         </p>
                                     </div>
                                 </div>
-                                <a href="{{ URL('admin/pages/'.$page->id.'/edit') }}" class="btn btn-success">编辑</a>
+                                <a href="<?php echo e(URL('admin/pages/'.$page->id.'/edit')); ?>" class="btn btn-success">编辑</a>
 
-                                <form action="{{ URL('admin/pages/'.$page->id) }}" method="POST" style="display: inline;">
+                                <form action="<?php echo e(URL('admin/pages/'.$page->id)); ?>" method="POST" style="display: inline;">
                                     <input name="_method" type="hidden" value="DELETE">
-                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
                                     <button type="submit" class="btn btn-danger">删除</button>
                                 </form>
-                            @else
-                                @can ('update-page',$page)
+                            <?php else: ?>
+                                <?php if (Gate::check('update-page',$page)): ?>
                                 <hr>
                                 <div class="page">
-                                    <h4>{{ $page->title }}</h4>
+                                    <h4><?php echo e($page->title); ?></h4>
                                     <div class="content">
                                         <p>
-                                            {{ $page->body }}
+                                            <?php echo e($page->body); ?>
+
                                         </p>
                                     </div>
                                 </div>
-                                <a href="{{ URL('admin/pages/'.$page->id.'/edit') }}" class="btn btn-success">编辑</a>
+                                <a href="<?php echo e(URL('admin/pages/'.$page->id.'/edit')); ?>" class="btn btn-success">编辑</a>
 
-                                <form action="{{ URL('admin/pages/'.$page->id) }}" method="POST" style="display: inline;">
+                                <form action="<?php echo e(URL('admin/pages/'.$page->id)); ?>" method="POST" style="display: inline;">
                                     <input name="_method" type="hidden" value="DELETE">
-                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
                                     <button type="submit" class="btn btn-danger">删除</button>
                                 </form>
-                                @endcan
-                            @endif
-                        @endforeach
+                                <?php endif; ?>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
 
 
                     </div>
@@ -68,4 +68,6 @@
             </div>
         </div>
     </div>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

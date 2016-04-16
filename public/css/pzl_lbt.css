@@ -99,21 +99,27 @@
 }
 
 .pzl_{
+    
     list-style-type:none;
     margin:0;
     padding:0;
+    position: absolute;
+    left: 16px;
+    top: 72px;
+    text-align:left;
 }
 .pzl_a:link,.pzl_a:visited
 {
+     
     display:block;
     font-weight:bold;
-    color:#FFFFFF;
-    background-color:#bebebe;
-    width:120px;
-    text-align:center;
+    color:#000000;
+    width:180px;
+    text-align:left;
     padding:4px;
     text-decoration:none;
     text-transform:uppercase;
+   
 }
 .pzl_a:hover,.pzl_a:active
 {
