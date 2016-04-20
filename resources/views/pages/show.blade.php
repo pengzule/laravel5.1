@@ -66,3 +66,6 @@
   </div>
 
 @endsection
+@section('m-js')
+
+@endsection

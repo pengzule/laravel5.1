@@ -78,4 +78,6 @@
 
 
 </body>
+<?php echo $__env->yieldContent('my-js'); ?>
+
 </html>

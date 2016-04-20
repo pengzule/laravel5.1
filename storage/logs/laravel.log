@@ -6683,3 +6683,6 @@ Stack trace:
 #49 /mnt/hgfs/linux_code/laravel5.1/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(87): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
 #50 /mnt/hgfs/linux_code/laravel5.1/public/index.php(54): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
 #51 {main}  
+[2016-04-18 23:41:21] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'Overtrue\LaravelShoppingCart\ServiceProvider' not found' in /mnt/hgfs/linux_share/laravel5.1/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php:146
+Stack trace:
+#0 {main}  

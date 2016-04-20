@@ -78,4 +78,6 @@
 
 
 </body>
+@yield('my-js')
+
 </html>

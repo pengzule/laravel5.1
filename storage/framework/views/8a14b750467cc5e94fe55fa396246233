@@ -62,4 +62,62 @@
 
 <?php $__env->stopSection(); ?>
 
+<?php $__env->startSection('my-js'); ?>
+<script type="text/javascript">
+  var bullets = document.getElementById('position').getElementsByTagName('li');
+  Swipe(document.getElementById('mySwipe'), {
+    auto: 2000,
+    continuous: true,
+    disableScroll: false,
+    callback: function(pos) {
+      var i = bullets.length;
+      while (i--) {
+        bullets[i].className = '';
+      }
+      bullets[pos].className = 'cur';
+    }
+  });
+
+  function _addCart() {
+    var product_id = "<?php echo e($product->id); ?>";
+    $.ajax({
+      type: "GET",
+      url: '/service/cart/add/' + product_id,
+      dataType: 'json',
+      cache: false,
+      success: function(data) {
+        if(data == null) {
+          $('.bk_toptips').show();
+          $('.bk_toptips span').html('服务端错误');
+          setTimeout(function() {$('.bk_toptips').hide();}, 2000);
+          return;
+        }
+        if(data.status != 0) {
+          $('.bk_toptips').show();
+          $('.bk_toptips span').html(data.message);
+          setTimeout(function() {$('.bk_toptips').hide();}, 2000);
+          return;
+        }
+
+        var num = $('#cart_num').html();
+        if(num == '') num = 0;
+        $('#cart_num').html(Number(num) + 1);
+
+      },
+      error: function(xhr, status, error) {
+        console.log(xhr);
+        console.log(status);
+        console.log(error);
+      }
+    });
+  }
+
+  function _toCart() {
+    location.href = '/cart';
+  }
+</script>
+
+
+<?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('_layouts.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
