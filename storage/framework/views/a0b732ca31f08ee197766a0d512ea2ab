@@ -1,19 +1,20 @@
-
-
 <?php $__env->startSection('content'); ?>
-    <ul class="pzl_">
+   <ul class="pzl_">
         <li><a class="pzl_a" href="#home">Home</a></li>
         <li><a class="pzl_a "href="#news">News</a></li>
         <li><a class="pzl_a "href="#news">News</a></li>
-        <li><a class="pzl_a"href="#about">About</a></li>
-        <li><a class="pzl_a "href="#news">News</a></li>
+        <li><a class="pzl_a "href="#about">About</a></li>
+        <li><a class="pzl_a "href="#news">Newsgggg</a></li>
         <li><a class="pzl_a "href="#news">News</a></li>
     </ul>
     <div class="container">
+ 
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading">后台首页</div>
+                    <div class="panel-heading"><a href="#"><img src="/images/user.png"></a>
+		    	<a href="#">( <?php echo e(Auth::user()->name); ?> )</a>
+                    </div>
 
                     <div class="panel-body">
 
@@ -68,4 +69,5 @@
         </div>
     </div>
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

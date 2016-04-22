@@ -47,9 +47,9 @@ class FormTest extends \PHPUnit_Framework_TestCase
 
         try {
             $form = new Form($nodes->item(1), 'http://example.com');
-            $this->fail('__construct() throws a \\LogicException if the input type is not submit, button, or image');
+            $this->fail('__construct() throws a \\LogicException if the input type is not submit, button, or images');
         } catch (\LogicException $e) {
-            $this->assertTrue(true, '__construct() throws a \\LogicException if the input type is not submit, button, or image');
+            $this->assertTrue(true, '__construct() throws a \\LogicException if the input type is not submit, button, or images');
         }
 
         $nodes = $dom->getElementsByTagName('button');
@@ -238,8 +238,8 @@ class FormTest extends \PHPUnit_Framework_TestCase
                  array('foobar' => array('InputFormField', 'foobar')),
             ),
             array(
-                'turns an image input into x and y fields',
-                '<input type="image" name="bar" />',
+                'turns an images input into x and y fields',
+                '<input type="images" name="bar" />',
                 array('bar.x' => array('InputFormField', '0'), 'bar.y' => array('InputFormField', '0')),
             ),
             array(
@@ -677,8 +677,8 @@ class FormTest extends \PHPUnit_Framework_TestCase
     public function testTypeAttributeIsCaseInsensitive()
     {
         $form = $this->createForm('<form method="post"><input type="IMAGE" name="example" /></form>');
-        $this->assertTrue($form->has('example.x'), '->has() returns true if the image input was correctly turned into an x and a y fields');
-        $this->assertTrue($form->has('example.y'), '->has() returns true if the image input was correctly turned into an x and a y fields');
+        $this->assertTrue($form->has('example.x'), '->has() returns true if the images input was correctly turned into an x and a y fields');
+        $this->assertTrue($form->has('example.y'), '->has() returns true if the images input was correctly turned into an x and a y fields');
     }
 
     /**

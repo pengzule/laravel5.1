@@ -1,5 +1,6 @@
 @extends('_layouts.default')
 
+@section('title','商品详情')
 
 @section('content')
 

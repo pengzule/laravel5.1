@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" mrc="text/html; charset=gb2312">
-  <title>Learn Laravel 5</title>
+	<title>@yield('title')</title>
 
   
 	<link href="/css/lbt.css" rel="stylesheet">
@@ -19,7 +19,7 @@
 
         <link href="{{ URL::to('/assets/css/bootstrap.min.css') }}" rel="stylesheet" >
 	<link href="{{ URL::to('/assets/css/font-awesome.min.css') }}" rel="stylesheet">
-	
+
 
 
 </head>
@@ -38,9 +38,9 @@
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					@if (! Auth::guest())
+					@if ( Auth::guest())
 						<li><a href="/order">我的订单</a></li>
-						<li><a href="#">待定</a></li>
+						<li><a href="#">我的购物车<span class="badge wishlistCount">{{ 1 }}</span></a></li>
 					@endif
 				</ul>
 

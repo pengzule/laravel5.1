@@ -15,7 +15,7 @@ class TestController extends Controller
 
     public function toProduct()
     {
-        $products = DB::table('products')->paginate(8);
+        $products = DB::table('product')->paginate(8);
         return view('cart.products')->with('products', $products);
     }
     /**

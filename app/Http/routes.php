@@ -29,6 +29,8 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
+Route::get('cart/add/{product_id}', 'Service\CartController@addCart');
+
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin','middleware' => 'auth'], function()
 {
   
@@ -45,3 +47,30 @@ Route::post('password/email', 'Auth\PasswordController@postEmail');
 
 Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
 Route::post('password/reset', 'Auth\PasswordController@postReset');
+
+
+Route::get('/login', 'View\MemberController@toLogin');
+Route::get('/register', 'View\MemberController@toRegister');
+
+Route::group(['prefix' => 'service'], function () {
+  Route::get('validate_code/create', 'Service\ValidateController@create');
+  Route::post('validate_phone/send', 'Service\ValidateController@sendSMS');
+  Route::get('validate_email', 'Service\ValidateController@validateEmail');
+  Route::post('upload/{type}', 'Service\UploadController@uploadFile');
+
+  Route::post('register', 'Service\MemberController@register');
+  Route::post('login', 'Service\MemberController@login');
+
+  Route::get('category/parent_id/{parent_id}', 'Service\BookController@getCategoryByParentId');
+  Route::get('cart/add/{product_id}', 'Service\CartController@addCart');
+  Route::get('cart/delete', 'Service\CartController@deleteCart');
+
+  Route::post('alipay', 'Service\PayController@aliPay');
+  Route::post('wxpay', 'Service\PayController@wxPay');
+
+  Route::post('pay/ali_notify', 'Service\PayController@aliNotify');
+  Route::get('pay/ali_result', 'Service\PayController@aliResult');
+  Route::get('pay/ali_merchant', 'Service\PayController@aliMerchant');
+
+  Route::post('pay/wx_notify', 'Service\PayController@wxNotify');
+});

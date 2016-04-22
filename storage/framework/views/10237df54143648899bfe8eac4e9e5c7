@@ -1,3 +1,5 @@
+<?php $__env->startSection('title','商品详情'); ?>
+
 <?php $__env->startSection('content'); ?>
 
   <h1 style="text-align: center; margin-top: 50px;"><?php echo e($product->name); ?></h1>
@@ -61,6 +63,9 @@
       注意：我们从Blade模板调用render方法时，确保使用语法以便HTML链接不被过滤
     </p>
   </div>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('m-js'); ?>
 
 <?php $__env->stopSection(); ?>
 
